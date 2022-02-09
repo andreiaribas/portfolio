@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Pesquisa</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Formulário de Pesquisa</h1>
+        <p id="description">Descrição do formulário</p>
+    </header>
+    <form id="survey-form" action="/" method="post">
+        <fieldset>
+            <label for="name" id="name-label">
+                Nome: <input type="text" name="nome" id="name" placeholder="Maria" required>
+            </label>
+            <label for="email" id="email-label">
+                Email: <input type="email" name="email" id="email" placeholder="meuemail@gmail.com" required>
+            </label>
+            <label for="number" id="number-label">
+                Idade: <input type="number" name="number" id="number" min="13" max="110" placeholder="20" required>
+            </label>
+
+            <label for="dropdown">Gênero (opcional):
+                <select name="genero" id="dropdown">
+                    <option value="">(Selecione uma opção)</option>
+                    <option value="1">Feminino</option>
+                    <option value="2">Masculino</option>
+                    <option value="3">Não-binário</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <p>Selecione uma opção:</p>
+            <label for="radio1">
+                <input type="radio" name="radio-opcoes" id="radio1" class="inline" value="1"> Opção 1
+            </label>
+            <label for="radio2">
+                <input type="radio" name="radio-opcoes" id="radio2" class="inline" value="2"> Opção 2
+            </label>
+
+            <p>Selecione quantas opções quiser:</p>
+            <label for="checkbox1">
+                <input type="checkbox" id="checkbox1" name="checkbox-opcao" class="inline" value="opcao-1"> Opção 1
+            </label>
+            <label for="checkbox2">
+                <input type="checkbox" id="checkbox2" name="checkbox-opcao" class="inline" value="opcao-2"> Opção 2
+            </label>
+            <label for="checkbox3">
+                <input type="checkbox" id="checkbox3" name="checkbox-opcao" class="inline" value="opcao-3"> Opção 3
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <label for="comentarios">
+                Comentários (opcional):
+                <textarea name="comentarios" id="comentarios" cols="2" rows="5" placeholder="Escreva aqui um comentário"></textarea>
+            </label>
+        </fieldset>
+        <input type="submit" id="submit" value="Enviar">
+    </form>
+</body>
+
+</html>
