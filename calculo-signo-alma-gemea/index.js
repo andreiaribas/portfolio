@@ -12,10 +12,12 @@ function calculoSigno() {
   console.log(`Você nasceu no dia: ${nascimentoDia}`);
 
   // data formatada para o padrão do Brasil. Pega apenas o mês.
-  let nascimentoMes = new Intl.DateTimeFormat("pt-BR", {
-    month: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(nascimentoInput));
+  let nascimentoMes = Number(
+    new Intl.DateTimeFormat("pt-BR", {
+      month: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(nascimentoInput))
+  );
   console.log(`Você nasceu no mês: ${nascimentoMes}`);
 
   let signosArray = [
@@ -43,17 +45,11 @@ function calculoSigno() {
     { name: "Touro", id: 22 },
     { name: "Gêmeos", id: 23 },
     { name: "Câncer", id: 24 },
-    { name: "Leão", id: 25 },
-    { name: "Virgem", id: 26 },
-    { name: "Libra", id: 27 },
-    { name: "Escorpião", id: 28 },
-    { name: "Sagitário", id: 29 },
-    { name: "Capricórnio", id: 30 },
   ];
 
   if (
-    (nascimentoMes == 1 && nascimentoDia >= 21) ||
-    (nascimentoMes == 2 && nascimentoDia <= 18)
+    (nascimentoMes === 1 && nascimentoDia >= 21) ||
+    (nascimentoMes === 2 && nascimentoDia <= 18)
   ) {
     var signoSolarId = 7;
 
@@ -62,88 +58,88 @@ function calculoSigno() {
       .filter((signo) => signo.id == 7)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 2 && nascimentoDia >= 19) ||
-    (nascimentoMes == 3 && nascimentoDia <= 20)
+    (nascimentoMes === 2 && nascimentoDia >= 19) ||
+    (nascimentoMes === 3 && nascimentoDia <= 20)
   ) {
     var signoSolarId = 8;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 8)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 3 && nascimentoDia >= 21) ||
-    (nascimentoMes == 4 && nascimentoDia <= 20)
+    (nascimentoMes === 3 && nascimentoDia >= 21) ||
+    (nascimentoMes === 4 && nascimentoDia <= 20)
   ) {
     var signoSolarId = 9;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 9)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 4 && nascimentoDia >= 21) ||
-    (nascimentoMes == 5 && nascimentoDia <= 20)
+    (nascimentoMes === 4 && nascimentoDia >= 21) ||
+    (nascimentoMes === 5 && nascimentoDia <= 20)
   ) {
     var signoSolarId = 10;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 10)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 5 && nascimentoDia >= 21) ||
-    (nascimentoMes == 6 && nascimentoDia <= 20)
+    (nascimentoMes === 5 && nascimentoDia >= 21) ||
+    (nascimentoMes === 6 && nascimentoDia <= 20)
   ) {
     var signoSolarId = 11;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 11)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 6 && nascimentoDia >= 21) ||
-    (nascimentoMes == 7 && nascimentoDia <= 22)
+    (nascimentoMes === 6 && nascimentoDia >= 21) ||
+    (nascimentoMes === 7 && nascimentoDia <= 22)
   ) {
     var signoSolarId = 12;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 12)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 7 && nascimentoDia >= 23) ||
-    (nascimentoMes == 8 && nascimentoDia <= 22)
+    (nascimentoMes === 7 && nascimentoDia >= 23) ||
+    (nascimentoMes === 8 && nascimentoDia <= 22)
   ) {
     var signoSolarId = 1;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 1)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 8 && nascimentoDia >= 23) ||
-    (nascimentoMes == 9 && nascimentoDia <= 22)
+    (nascimentoMes === 8 && nascimentoDia >= 23) ||
+    (nascimentoMes === 9 && nascimentoDia <= 22)
   ) {
     var signoSolarId = 2;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 2)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 9 && nascimentoDia >= 23) ||
-    (nascimentoMes == 10 && nascimentoDia <= 22)
+    (nascimentoMes === 9 && nascimentoDia >= 23) ||
+    (nascimentoMes === 10 && nascimentoDia <= 22)
   ) {
     var signoSolarId = 3;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 3)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 10 && nascimentoDia >= 23) ||
-    (nascimentoMes == 11 && nascimentoDia <= 21)
+    (nascimentoMes === 10 && nascimentoDia >= 23) ||
+    (nascimentoMes === 11 && nascimentoDia <= 21)
   ) {
     var signoSolarId = 4;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 4)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 11 && nascimentoDia >= 22) ||
-    (nascimentoMes == 12 && nascimentoDia <= 21)
+    (nascimentoMes === 11 && nascimentoDia >= 22) ||
+    (nascimentoMes === 12 && nascimentoDia <= 21)
   ) {
     var signoSolarId = 5;
     var signoSolarName = signosArray
       .filter((signo) => signo.id == 5)
       .map((signo) => signo.name);
   } else if (
-    (nascimentoMes == 12 && nascimentoDia >= 22) ||
-    (nascimentoMes == 1 && nascimentoDia <= 20)
+    (nascimentoMes === 12 && nascimentoDia >= 22) ||
+    (nascimentoMes === 1 && nascimentoDia <= 20)
   ) {
     var signoSolarId = 6;
     var signoSolarName = signosArray
@@ -167,7 +163,7 @@ function calculoSigno() {
   if (nascimentoHorarioNumero >= 631 && nascimentoHorarioNumero <= 830) {
     var signoAscId = Number(signoSolarId) + 1;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     nascimentoHorarioNumero >= 831 &&
@@ -175,7 +171,7 @@ function calculoSigno() {
   ) {
     var signoAscId = Number(signoSolarId) + 2;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     nascimentoHorarioNumero >= 1031 &&
@@ -183,7 +179,7 @@ function calculoSigno() {
   ) {
     var signoAscId = Number(signoSolarId) + 3;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     nascimentoHorarioNumero >= 1231 &&
@@ -191,7 +187,7 @@ function calculoSigno() {
   ) {
     var signoAscId = Number(signoSolarId) + 4;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     nascimentoHorarioNumero >= 1431 &&
@@ -199,7 +195,7 @@ function calculoSigno() {
   ) {
     var signoAscId = Number(signoSolarId) + 5;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     nascimentoHorarioNumero >= 1631 &&
@@ -207,7 +203,7 @@ function calculoSigno() {
   ) {
     var signoAscId = Number(signoSolarId) + 6;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     nascimentoHorarioNumero >= 1831 &&
@@ -215,7 +211,7 @@ function calculoSigno() {
   ) {
     var signoAscId = Number(signoSolarId) + 7;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     nascimentoHorarioNumero >= 2031 &&
@@ -223,7 +219,7 @@ function calculoSigno() {
   ) {
     var signoAscId = Number(signoSolarId) + 8;
     var signoAscName = signosArray
-      .filter((signo) => signo.id == signoAscId)
+      .filter((signo) => signo.id === signoAscId)
       .map((signo) => signo.name);
   } else if (
     (nascimentoHorarioNumero >= 2231 && nascimentoHorarioNumero <= 2359) ||
@@ -260,53 +256,29 @@ function calculoSigno() {
 
   console.log(`Seu signo alma gêmea é: ${signoAlmaGemeaName}`);
 
-  if (
-    signoAlmaGemeaId == 1 ||
-    signoAlmaGemeaId == 13 ||
-    signoAlmaGemeaId == 25
-  ) {
+  if (signoAlmaGemeaId === 1 || signoAlmaGemeaId === 13) {
     return (location.href = "/alma-gemea-leao");
-  } else if (
-    signoAlmaGemeaId == 2 ||
-    signoAlmaGemeaId == 14 ||
-    signoAlmaGemeaId == 26
-  ) {
+  } else if (signoAlmaGemeaId === 2 || signoAlmaGemeaId === 14) {
     return (location.href = "/alma-gemea-virgem");
-  } else if (
-    signoAlmaGemeaId == 3 ||
-    signoAlmaGemeaId == 15 ||
-    signoAlmaGemeaId == 27
-  ) {
+  } else if (signoAlmaGemeaId === 3 || signoAlmaGemeaId === 15) {
     return (location.href = "/alma-gemea-libra");
-  } else if (
-    signoAlmaGemeaId == 4 ||
-    signoAlmaGemeaId == 16 ||
-    signoAlmaGemeaId == 28
-  ) {
+  } else if (signoAlmaGemeaId === 4 || signoAlmaGemeaId === 16) {
     return (location.href = "/alma-gemea-escorpiao");
-  } else if (
-    signoAlmaGemeaId == 5 ||
-    signoAlmaGemeaId == 17 ||
-    signoAlmaGemeaId == 29
-  ) {
+  } else if (signoAlmaGemeaId === 5 || signoAlmaGemeaId === 17) {
     return (location.href = "/alma-gemea-sagitario");
-  } else if (
-    signoAlmaGemeaId == 6 ||
-    signoAlmaGemeaId == 18 ||
-    signoAlmaGemeaId == 30
-  ) {
+  } else if (signoAlmaGemeaId === 6 || signoAlmaGemeaId === 18) {
     return (location.href = "/alma-gemea-capricornio");
-  } else if (signoAlmaGemeaId == 7 || signoAlmaGemeaId == 19) {
+  } else if (signoAlmaGemeaId === 7 || signoAlmaGemeaId === 19) {
     return (location.href = "/alma-gemea-aquario");
-  } else if (signoAlmaGemeaId == 8 || signoAlmaGemeaId == 20) {
+  } else if (signoAlmaGemeaId === 8 || signoAlmaGemeaId === 20) {
     return (location.href = "/alma-gemea-peixes");
-  } else if (signoAlmaGemeaId == 9 || signoAlmaGemeaId == 21) {
+  } else if (signoAlmaGemeaId === 9 || signoAlmaGemeaId === 21) {
     return (location.href = "/alma-gemea-aries");
-  } else if (signoAlmaGemeaId == 10 || signoAlmaGemeaId == 22) {
+  } else if (signoAlmaGemeaId === 10 || signoAlmaGemeaId === 22) {
     return (location.href = "/alma-gemea-touro");
-  } else if (signoAlmaGemeaId == 11 || signoAlmaGemeaId == 23) {
+  } else if (signoAlmaGemeaId === 11 || signoAlmaGemeaId === 23) {
     return (location.href = "/alma-gemea-gemeos");
-  } else if (signoAlmaGemeaId == 12 || signoAlmaGemeaId == 24) {
+  } else if (signoAlmaGemeaId === 12 || signoAlmaGemeaId === 24) {
     return (location.href = "/alma-gemea-cancer");
   }
 }

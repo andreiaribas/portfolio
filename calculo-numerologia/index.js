@@ -9,7 +9,7 @@ function calculoNumerologia() {
   }).format(new Date(dataDeNascimentoInput));
 
   // mensagem de erro caso digite uma data que não existe. Ex: 31 de fev. Quando digita uma data inválida pelo pc usando o input type date, o valor fica vazio
-  if (dataDeNascimentoInput == "") {
+  if (dataDeNascimentoInput === "") {
     alert("Ops, esta não é uma data válida! Tente novamente.");
     return false;
   }
@@ -17,23 +17,23 @@ function calculoNumerologia() {
   console.log(`Você nasceu em ${dataDeNascimentoFormatada}`);
 
   // tira todos os hífens
-  let dataNumero = dataDeNascimentoInput.replace(/-/g, "");
+  let dataNumero = Number(dataDeNascimentoInput.replace(/-/g, ""));
 
   // Usei o while para se repetir até que dê um dos números da numerologia
   while (
-    dataNumero != 1 &&
-    dataNumero != 2 &&
-    dataNumero != 3 &&
-    dataNumero != 4 &&
-    dataNumero != 5 &&
-    dataNumero != 6 &&
-    dataNumero != 7 &&
-    dataNumero != 8 &&
-    dataNumero != 9 &&
-    dataNumero != 11 &&
-    dataNumero != 22 &&
-    dataNumero != 33 &&
-    dataNumero != 44
+    dataNumero !== 1 &&
+    dataNumero !== 2 &&
+    dataNumero !== 3 &&
+    dataNumero !== 4 &&
+    dataNumero !== 5 &&
+    dataNumero !== 6 &&
+    dataNumero !== 7 &&
+    dataNumero !== 8 &&
+    dataNumero !== 9 &&
+    dataNumero !== 11 &&
+    dataNumero !== 22 &&
+    dataNumero !== 33 &&
+    dataNumero !== 44
   ) {
     // transforma em string para poder usar split
     dataNumero = dataNumero
@@ -50,31 +50,31 @@ function calculoNumerologia() {
 
   // Resultado da numerologia
   // Se resultado for x, redireciona para a página com a descrição da personalidade x
-  if (dataNumero == 1) {
+  if (dataNumero === 1) {
     return (location.href = "/numero-01");
-  } else if (dataNumero == 2) {
+  } else if (dataNumero === 2) {
     return (location.href = "/numero-02");
-  } else if (dataNumero == 3) {
+  } else if (dataNumero === 3) {
     return (location.href = "/numero-03");
-  } else if (dataNumero == 4) {
+  } else if (dataNumero === 4) {
     return (location.href = "/numero-04");
-  } else if (dataNumero == 5) {
+  } else if (dataNumero === 5) {
     return (location.href = "/numero-05");
-  } else if (dataNumero == 6) {
+  } else if (dataNumero === 6) {
     return (location.href = "/numero-06");
-  } else if (dataNumero == 7) {
+  } else if (dataNumero === 7) {
     return (location.href = "/numero-07");
-  } else if (dataNumero == 8) {
+  } else if (dataNumero === 8) {
     return (location.href = "/numero-08");
-  } else if (dataNumero == 9) {
+  } else if (dataNumero === 9) {
     return (location.href = "/numero-09");
-  } else if (dataNumero == 11) {
+  } else if (dataNumero === 11) {
     return (location.href = "/numero-11");
-  } else if (dataNumero == 22) {
+  } else if (dataNumero === 22) {
     return (location.href = "/numero-22");
-  } else if (dataNumero == 33) {
+  } else if (dataNumero === 33) {
     return (location.href = "/numero-33");
-  } else if (dataNumero == 44) {
+  } else if (dataNumero === 44) {
     return (location.href = "/numero-44");
   }
 }
