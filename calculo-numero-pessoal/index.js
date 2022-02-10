@@ -1,7 +1,8 @@
 function calculoNumerologia() {
   // pega a data do input, por padrão ela vem formata YYYY-MM-DD
-  let dataDeNascimentoInput =
-    document.getElementById("data-de-nascimento").value;
+  let dataDeNascimentoInput = document.querySelector(
+    "#data-de-nascimento"
+  ).value;
 
   // data formatada para o padrão do Brasil. Está guardada na variável para caso queira utilizá-la no futuro
   let dataDeNascimentoFormatada = new Intl.DateTimeFormat("pt-BR", {
@@ -45,11 +46,14 @@ function calculoNumerologia() {
       // usa o reduce para somar cada um dos números
       .reduce((soma, x) => Number(x) + Number(soma));
 
-    console.log(`A soma dos dígitos da sua data de nascimento é ${dataNumero}`);
+    document.querySelector(
+      ".numerologia-resultado"
+    ).innerHTML = `Seu número pessoal é ${dataNumero}`;
   }
 
-  // Resultado da numerologia
-  // Se resultado for x, redireciona para a página com a descrição da personalidade x
+  /*
+  // Se eu quisesse redirecionar para alguma página dependendo do resultado;
+
   if (dataNumero === 1) {
     return (location.href = "/numero-01");
   } else if (dataNumero === 2) {
@@ -77,4 +81,5 @@ function calculoNumerologia() {
   } else if (dataNumero === 44) {
     return (location.href = "/numero-44");
   }
+*/
 }

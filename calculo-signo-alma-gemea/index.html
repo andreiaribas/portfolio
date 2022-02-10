@@ -6,18 +6,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="index.js" defer></script>
-	<title>Calcular Signo Alma Gêmea</title>
+	<title>Calcular Signo</title>
 </head>
 
 <body>
-	<form method="post" onsubmit="calculoSigno(); return false">
-		<label for="data-de-nascimento">
-			<br>
-			<input type="datetime-local" name="numerologia-data" id="data-de-nascimento" required>
-		</label>
-		<input type="submit" value="CALCULAR SIGNO, ASC e ALMA GÊMEA">
-	</form>
-
+	<main>
+		<form method="post" onsubmit="calculoSigno(); return false">
+			<label for="data-de-nascimento">
+				<br>
+				<input type="datetime-local" name="numerologia-data" id="data-de-nascimento" required>
+			</label>
+			<input type="submit" value="CALCULAR SIGNO, ASC e ALMA GÊMEA">
+		</form>
+		<p class="signo-solar-resultado"></p>
+		<p class="signo-ascendente-resultado"></p>
+		<p class="signo-alma-gemea-resultado"></p>
+	</main>
 </body>
 
 </html>
