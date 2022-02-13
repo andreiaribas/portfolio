@@ -12,4 +12,4 @@ Para calcular o ascendente, é necessário saber seu horário de nascimento. Por
 
 Já seu signo alma gêmea, é o seu signo ascendente + 6
 
-Você pode visualizar como ficou aqui no meu [CodePen](https://codepen.io/andreiaribas/pen/MWOmqzX)
+:large_blue_diamond: Você pode visualizar como ficou aqui no meu [CodePen](https://codepen.io/andreiaribas/pen/MWOmqzX)
