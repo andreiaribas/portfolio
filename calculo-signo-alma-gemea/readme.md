@@ -1,6 +1,7 @@
 # Sobre
 
-Um teste para calcular o seu signo solar, seu signo ascendente e seu signo alma gêmea.
+Um teste para calcular o seu signo solar, seu signo ascendente e seu signo alma gêmea.  
+
 *Atenção*: esse teste não considera se você nasceu no horário de verão. Se você nasceu no horário de verão, tem que digitar seu horário de nascimento -1h
 
 ## Como é feito
