@@ -1,11 +1,11 @@
 function calculoNumerologia() {
   // pega a data do input, por padrão ela vem formata YYYY-MM-DD
-  let dataDeNascimentoInput = document.querySelector(
+  const dataDeNascimentoInput = document.querySelector(
     "#data-de-nascimento"
   ).value;
 
   // data formatada para o padrão do Brasil. Está guardada na variável para caso queira utilizá-la no futuro
-  let dataDeNascimentoFormatada = new Intl.DateTimeFormat("pt-BR", {
+  const dataDeNascimentoFormatada = new Intl.DateTimeFormat("pt-BR", {
     timeZone: "UTC",
   }).format(new Date(dataDeNascimentoInput));
 
@@ -18,7 +18,7 @@ function calculoNumerologia() {
   console.log(`Você nasceu em ${dataDeNascimentoFormatada}`);
 
   // tira todos os hífens
-  let dataNumero = Number(dataDeNascimentoInput.replace(/-/g, ""));
+  let dataNumero = Number(dataDeNascimentoInput.replaceAll("-", ""));
 
   // Usei o while para se repetir até que dê um dos números da numerologia
   while (

@@ -1,18 +1,18 @@
-function calculoSigno(signoSolarId, signoSolarName, signoAscId, signoAscName) {
+function calculoSigno() {
   //  ~~ 1. Descobrir signo solar ~~
 
   // pega a data do input, por padrão ela vem formatada YYYY-MM-DD
-  let nascimentoInput = document.querySelector("#data-de-nascimento").value;
+  const nascimentoInput = document.querySelector("#data-de-nascimento").value;
 
   // data formatada para o padrão do Brasil. Pega apenas o dia.
-  let nascimentoDia = new Intl.DateTimeFormat("pt-BR", {
+  const nascimentoDia = new Intl.DateTimeFormat("pt-BR", {
     day: "numeric",
     timeZone: "UTC",
   }).format(new Date(nascimentoInput));
   console.log(`Você nasceu no dia: ${nascimentoDia}`);
 
   // data formatada para o padrão do Brasil. Pega apenas o mês.
-  let nascimentoMes = Number(
+  const nascimentoMes = Number(
     new Intl.DateTimeFormat("pt-BR", {
       month: "numeric",
       timeZone: "UTC",
@@ -20,7 +20,7 @@ function calculoSigno(signoSolarId, signoSolarName, signoAscId, signoAscName) {
   );
   console.log(`Você nasceu no mês: ${nascimentoMes}`);
 
-  let signosArray = [
+  const signosArray = [
     { name: "Leão", id: 1 },
     { name: "Virgem", id: 2 },
     { name: "Libra", id: 3 },
@@ -46,6 +46,8 @@ function calculoSigno(signoSolarId, signoSolarName, signoAscId, signoAscName) {
     { name: "Gêmeos", id: 23 },
     { name: "Câncer", id: 24 },
   ];
+
+  let signoSolarId, signoSolarName;
 
   if (
     (nascimentoMes === 1 && nascimentoDia >= 21) ||
@@ -152,15 +154,17 @@ function calculoSigno(signoSolarId, signoSolarName, signoAscId, signoAscName) {
 
   //  ~~ 2. Descobrir signo ascendente ~~
   // Pega o horário que foi digitado no input
-  let nascimentoHorario = new Intl.DateTimeFormat("pt-BR", {
+  const nascimentoHorario = new Intl.DateTimeFormat("pt-BR", {
     timeStyle: "short",
   }).format(new Date(nascimentoInput));
 
   console.log(`Você nasceu às: ${nascimentoHorario}`);
 
   // Tira o : do horario
-  let nascimentoHorarioNumero = nascimentoHorario.replace(":", "");
+  const nascimentoHorarioNumero = nascimentoHorario.replace(":", "");
   console.log(`Horário sem formatação ":": ${nascimentoHorarioNumero}`);
+
+  let signoAscId, signoAscName;
 
   if (nascimentoHorarioNumero >= 631 && nascimentoHorarioNumero <= 830) {
     signoAscId = Number(signoSolarId) + 1;
@@ -254,7 +258,7 @@ function calculoSigno(signoSolarId, signoSolarName, signoAscId, signoAscName) {
 
   // 3. Alma gêmea
   let signoAlmaGemeaId = signoAscId + 6;
-  let signoAlmaGemeaName = signosArray
+  const signoAlmaGemeaName = signosArray
     .filter((signo) => signo.id == signoAlmaGemeaId)
     .map((signo) => signo.name);
 
@@ -264,7 +268,7 @@ function calculoSigno(signoSolarId, signoSolarName, signoAscId, signoAscName) {
 
   /*
 
-Caso eu quisesse redirecionar para alguma página dependendo do resultado
+  Caso eu quisesse redirecionar para alguma página dependendo do resultado
 
   if (signoAlmaGemeaId === 1 || signoAlmaGemeaId === 13) {
     return (location.href = "/alma-gemea-leao");
