@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-family: "Staatliches", cursive;
+}
+
+:root {
+  --color-text: #4a4e69;
+  --header-bg: #8e9aaf;
+  --title-bg: #cbc0d3;
+  --img-description: #feeafa;
+  --body-bg: #eff1ff;
+  --font-color-1: #fff;
+  --font-color-2: #23053a;
+}
+
+body {
+  background-color: var(--body-bg);
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--header-bg);
+}
+
+header h1 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--title-bg);
+  font-size: 2.5rem;
+  line-height: 0.85;
+  letter-spacing: 0.05em;
+  color: var(--font-color-1);
+  height: 49px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+header img {
+  max-height: 137px;
+  margin: 32px 0;
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.25));
+  align-self: center;
+}
+
+.wrapper {
+  padding: 14px 32px 60px;
+  justify-content: center;
+}
+
+.wrapper p {
+  font-family: "Palanquin", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  margin: 0 8px 53px;
+  color: var(--font-color-2);
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 36px;
+  padding: 0 20px;
+  animation-name: bottom-to-top;
+  animation-duration: 600ms;
+}
+
+.img-description {
+  position: relative;
+}
+
+.gallery h3 {
+  position: absolute;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  background-color: var(--img-description);
+  padding: 0 23px;
+  border-radius: 20px;
+  width: fit-content;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  animation-name: top-to-bottom;
+  animation-duration: 700ms;
+}
+
+.gallery img {
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+.gallery img:hover {
+  opacity: 0.7;
+  transition: 400ms;
+}
+
+.desktop-img {
+  display: none;
+}
+
+@keyframes bottom-to-top {
+  from {
+    transform: translateY(100px);
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes top-to-bottom {
+  from {
+    transform: translateY(-100px);
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 740px) {
+  .gallery {
+    display: grid;
+    padding: 0 32px;
+    justify-content: space-around;
+    grid-template-areas:
+      "A B"
+      "A D"
+      "C D";
+  }
+  .img-description:nth-child(1) {
+    grid-area: B;
+  }
+  .img-description:nth-child(2) {
+    grid-area: A;
+  }
+  .img-description:nth-child(3) {
+    grid-area: C;
+  }
+  .img-description:nth-child(4) {
+    grid-area: D;
+  }
+  .wrapper p {
+    margin: 0 40px 53px;
+  }
+}
+
+@media (min-width: 950px) {
+  .wrapper {
+    padding: 0;
+  }
+  .wrapper p {
+    font-size: 1.5rem;
+    padding: 32px 32px 125px;
+    margin: 0;
+    color: var(--font-color-1);
+    background-color: var(--header-bg);
+  }
+  .desktop-img {
+    display: contents;
+    text-align: center;
+  }
+  .page {
+    display: grid;
+    grid-template-columns: 1.25fr 3fr;
+    max-width: 1600px;
+    column-gap: 2vw;
+    align-items: start;
+    height: 100vh;
+  }
+  .desktop {
+    height: 100%;
+    background-color: var(--header-bg);
+  }
+  .gallery {
+    position: relative;
+    margin: 64px 0 46px 0;
+    display: grid;
+    gap: 32px;
+    align-content: center;
+    grid-template-areas:
+      "img1 img2 img3"
+      "img4 img2 img6"
+      "img4 img5 img6"
+      "footer footer footer";
+  }
+  .img-description:nth-child(1) {
+    grid-area: img1;
+  }
+  .img-description:nth-child(2) {
+    grid-area: img2;
+  }
+  .img-description:nth-child(3) {
+    grid-area: img5;
+  }
+  .img-description:nth-child(4) {
+    grid-area: img4;
+  }
+  .desktop-img .img-description:nth-child(1) {
+    grid-area: img3;
+  }
+  .desktop-img .img-description:nth-child(2) {
+    grid-area: img6;
+  }
+
+  footer {
+    margin-bottom: 46px;
+  }
+
+  footer p {
+    font-family: "Palanquin", sans-serif;
+    font-size: 0.88rem;
+    line-height: 2;
+    color: var(--color-text);
+  }
+
+  footer a {
+    font-family: "Palanquin", sans-serif;
+    color: var(--color-text);
+    font-weight: bold;
+  }
+  footer p {
+    margin-top: 22px;
+    grid-area: footer;
+  }
+}
