@@ -1,0 +1,2 @@
+* -linguist-detectable=false
+App.js -linguist-detectable=true
